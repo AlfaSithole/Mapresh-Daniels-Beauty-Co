@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout - Mapresh Daniels Beauty & Co</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<header>
+    <div class="company-name">Mapresh Daniels Beauty & Co</div>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Book Now</a>
+    <a href="checkout.html">Checkout</a>
+</nav>
+
+<section class="hero">
+    <h1>Checkout</h1>
+    <p>Review your cart and proceed to payment</p>
+</section>
+
+<section class="section">
+    <h2>Your Cart</h2>
+    <div id="checkout-cart" class="card-container">
+        <!-- Cart items will be dynamically cloned here -->
+    </div>
+    <div class="cart-total" style="font-size:20px; margin-top:20px;">Total: R0</div>
+    <button id="pay-btn" style="margin-top:20px; background:#ff1493; color:white; padding:15px 30px; border:none; border-radius:30px; font-family:'Baloo 2', cursive; font-size:20px; cursor:pointer; transition:0.3s;">Proceed to Payment</button>
+</section>
+
+<footer>
+    © 2026 Mapresh Daniels Beauty & Co
+</footer>
+
+<script>
+// Clone cart items from main cart
+const checkoutCart = document.getElementById('checkout-cart');
+const cartTotalDiv = document.querySelector('.cart-total');
+
+function renderCheckoutCart() {
+    checkoutCart.innerHTML = '';
+    let total = 0;
+    cart.forEach(item => {
+        total += item.price;
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.innerHTML = `<h3>${item.name}</h3><p>R${item.price}</p>`;
+        checkoutCart.appendChild(card);
+    });
+    cartTotalDiv.textContent = `Total: R${total}`;
+}
+
+// Initial render
+renderCheckoutCart();
+
+// Payment button placeholder
+document.getElementById('pay-btn').addEventListener('click', () => {
+    if(cart.length === 0){
+        alert('Your cart is empty!');
+    } else {
+        alert('Payment processing placeholder.\nImplement PayFast/Stripe integration here.');
+    }
+});
+
+// Re-render if cart updates (optional for dynamic updates)
+updateCart = function(){
+    const cartItems=document.getElementById('cart-items');
+    cartItems.innerHTML='';
+    let total=0;
+    cart.forEach(item=>{
+        total+=item.price;
+        const div=document.createElement('div');
+        div.classList.add('cart-item');
+        div.textContent=`${item.name} R${item.price}`;
+        cartItems.appendChild(div);
+    });
+    cartDiv.querySelector('.cart-total').textContent=`Total: R${total}`;
+    renderCheckoutCart(); // Update checkout cart too
+}
+</script>
+
+<!-- AI Chat Widget -->
+<div id="ai-chat-toggle">💬 Chat</div>
+<div id="ai-chat-widget">
+    <div id="ai-chat-header">Hi! I'm Mapresh AI</div>
+    <div id="ai-chat-messages"></div>
+    <input type="text" id="ai-chat-input" placeholder="Ask a question..." />
+</div>
+
+</body>
+</html>

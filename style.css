@@ -1,0 +1,240 @@
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+/* Fonts */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    overflow-x: hidden;
+    color: #333;
+}
+
+/* Header */
+header { text-align:center; padding:20px; background:#ffe6f0; position:relative; }
+.company-name { font-family:'Baloo 2', cursive; font-size:36px; color:#ff1493; font-weight:bold; }
+
+/* Navigation */
+nav { text-align:center; padding:15px; z-index:10; position:relative; }
+nav a { text-decoration:none; color:#ff1493; margin:0 15px; font-weight:bold; transition:0.3s; font-family:'Baloo 2', cursive; }
+nav a:hover { color:#ff69b4; }
+
+/* Hero */
+.hero {
+    height:80vh; display:flex; flex-direction:column; justify-content:center; align-items:center; position:relative; text-align:center; overflow:hidden;
+    background: url('cartoon-salon-bg.png') center bottom no-repeat; background-size:contain; 
+}
+.hero h1 { font-family:'Baloo 2', cursive; font-size:48px; color:#ff1493; margin-bottom:20px; text-shadow: 1px 1px 2px #fff; }
+.hero p { font-family:'Poppins', sans-serif; font-size:22px; margin-bottom:30px; }
+.book-btn {
+    font-family:'Baloo 2', cursive; padding:15px 40px; background:#ff1493; color:white; border-radius:50px;
+    font-size:22px; text-decoration:none; box-shadow:0 5px 15px rgba(255,20,147,0.4);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+.book-btn:hover { transform:scale(1.15); box-shadow:0 10px 25px rgba(255,20,147,0.6); background-color:#ff69b4; }
+
+/* Sections */
+.section { padding:80px 20px; text-align:center; position:relative; }
+.section h2 { font-family:'Baloo 2', cursive; color:#ff1493; font-size:32px; margin-bottom:30px; }
+
+/* Cards */
+.card-container { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
+.card {
+    background:#fff0f6; border-radius:25px; padding:30px; width:280px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2); transition: transform 0.3s, background-color 0.3s;
+    font-family:'Poppins', sans-serif; position:relative;
+}
+.card:hover { transform:scale(1.05); background-color:#ffe6f0; }
+
+/* Product Prices & Add to Cart */
+.price { font-weight:bold; font-size:18px; margin-top:10px; }
+.add-cart-btn { margin-top:10px; padding:10px 20px; border:none; border-radius:20px; background:#ff1493; color:white; cursor:pointer;
+    font-family:'Baloo 2', cursive; transition:0.3s; }
+.add-cart-btn:hover { background:#ff69b4; transform:scale(1.1); }
+
+/* Cart Display */
+#cart { position:fixed; top:20px; right:20px; background:#fff0f6; padding:20px; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.2); width:250px; z-index:20; }
+#cart h3 { color:#ff1493; font-family:'Baloo 2', cursive; margin-bottom:10px; }
+.cart-item { display:flex; justify-content:space-between; margin-bottom:8px; }
+.cart-total { font-weight:bold; margin-top:10px; }
+
+/* Footer */
+footer { text-align:center; padding:20px; background:#ffe6f0; color:#ff1493; font-family:'Baloo 2', cursive; }
+
+/* Floating circles, stars, shapes, confetti (same as previous) */
+
+.wiggly-star { position:absolute; width:15px; height:15px; background:#ff1493; clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); animation:wiggle 3s infinite ease-in-out; opacity:0.7; }
+
+
+/* Mobile */
+@media(max-width:768px){ .hero h1{ font-size:36px; } .card-container{ flex-direction:column; align-items:center; } }
+
+/* Cartoon People Floating Animations */
+.cartoon-person {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    animation: floatPerson 6s infinite ease-in-out;
+    opacity: 0.9;
+    transition: transform 0.3s;
+}
+.cartoon-person:hover {
+    transform: scale(1.15) rotate(5deg);
+    z-index: 30;
+}
+
+/* Different speeds and delays for variety */
+.cartoon-hair { animation-duration: 5s; top: 50%; left: 10%; }
+.cartoon-nails { animation-duration: 6s; top: 60%; left: 70%; }
+.cartoon-skincare { animation-duration: 7s; top: 40%; left: 80%; }
+
+/* Float animation */
+@keyframes floatPerson {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Testimonials Section */
+.testimonials { padding:80px 20px; background:#fff0f6; text-align:center; }
+.testimonials h2 { font-family:'Baloo 2', cursive; color:#ff1493; font-size:32px; margin-bottom:40px; }
+.testimonial-cards { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
+.testimonial-card {
+    background:#ffe6f0; border-radius:25px; padding:20px; width:280px; box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.testimonial-card:hover { transform:scale(1.05); box-shadow:0 10px 25px rgba(255,20,147,0.5); }
+.testimonial-card img { width:60px; height:60px; border-radius:50%; margin-bottom:15px; }
+.testimonial-card p { font-family:'Poppins', sans-serif; font-size:16px; color:#333; margin-bottom:10px; }
+
+/* Instagram Gallery */
+.gallery { padding:80px 20px; background:#fff; text-align:center; }
+.gallery h2 { font-family:'Baloo 2', cursive; color:#ff1493; font-size:32px; margin-bottom:40px; }
+.gallery-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:20px; justify-items:center; }
+.gallery-grid img { width:100%; border-radius:20px; transition: transform 0.3s, box-shadow 0.3s; cursor:pointer; }
+.gallery-grid img:hover { transform:scale(1.1); box-shadow:0 10px 25px rgba(255,20,147,0.5); }
+
+/* Mobile Adjustments */
+@media(max-width:768px){
+    .testimonial-cards { flex-direction:column; align-items:center; }
+}
+
+/* Sparkle Effect on Hover */
+@keyframes sparkle {
+  0% { transform: scale(0) rotate(0deg); opacity:0; }
+  50% { transform: scale(1) rotate(45deg); opacity:1; }
+  100% { transform: scale(0) rotate(90deg); opacity:0; }
+}
+
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #fff0ff;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #ff69b4, 0 0 12px #ff1493;
+  animation: sparkle 0.8s linear forwards;
+  pointer-events: none;
+}
+
+/* Position relative for parent to allow sparkle */
+.company-name, .book-btn, .add-cart-btn {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Floating Pink Circles */
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: #ff1493;
+  opacity: 0.7;
+  animation-name: floatCircle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes floatCircle {
+  0% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-30px) translateX(20px); }
+  50% { transform: translateY(0px) translateX(40px); }
+  75% { transform: translateY(30px) translateX(20px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+
+/* AI Chat Styles */
+#ai-chat-toggle {
+  position: fixed;
+  bottom: 20px; right: 20px;
+  background:#ff1493; color:white; padding:15px 20px;
+  border-radius:50px; cursor:pointer; font-size:20px; z-index:100;
+  transition:0.3s;
+}
+#ai-chat-toggle:hover { background:#ff69b4; }
+
+#ai-chat-widget {
+  position: fixed;
+  bottom: 80px; right: 20px;
+  width: 300px; height: 400px;
+  background:white; border-radius:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+  display:none; flex-direction:column;
+  overflow:hidden; z-index:100;
+}
+
+#ai-chat-header { background:#ff1493; color:white; padding:10px; text-align:center; font-weight:700; font-family:'Baloo 2', cursive; }
+
+#ai-chat-messages {
+  flex:1; padding:10px; overflow-y:auto; font-size:14px;
+}
+
+#ai-chat-input {
+  border:none; border-top:1px solid #ddd; padding:10px;
+  font-size:14px; outline:none; width:100%; box-sizing:border-box;
+}
+.ai-message { margin:5px 0; padding:8px 10px; border-radius:15px; max-width:80%; }
+.ai-user { background:#ffe6f0; margin-left:auto; }
+.ai-bot { background:#ff1493; color:white; margin-right:auto; }
+
+/* Salon Hours Section */
+.salon-hours {
+    padding: 60px 20px;
+    text-align: center;
+    background: #fff0f6;
+    position: relative;
+}
+
+.salon-hours h2 {
+    font-family: 'Baloo 2', cursive;
+    color: #ff1493;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.hours-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.day {
+    background: #ffe6f0;
+    padding: 20px 30px;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.day:hover {
+    transform: scale(1.05);
+    background-color: #ffb6d9;
+    cursor: default;
+}
+
+.day.closed {
+    background: #ffd6e8;
+    color: #ff1493;
+}
